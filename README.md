@@ -1,4 +1,4 @@
-Flask Quickstart:
+### Flask Quickstart:
 
 `python3 -m venv venv`
 
@@ -10,4 +10,38 @@ Activate (on Mac):
 pip install Flask
 export FLASK_APP=app/main.py
 flask run
+```
+
+### Heroku start
+```console
+heroku login -i
+heroku create your_app_name
+```
+
+add config vars:
+```console
+heroku config:set CONSUMER_KEY=xxx
+heroku config:set CONSUMER_SECRET=xxx
+heroku config:set ACCESS_TOKEN=xxx
+heroku config:set ACCESS_SECRET=xxx
+heroku config:set INTERVAL=1200
+heroku config:set DEBUG=0
+```
+
+Scale worker:
+```console
+heroku ps:scale worker=1
+```
+
+Test locally:
+```console
+heroku local
+```
+
+Push to Heroku:
+```console
+heroku git:clone -a your_app_name
+git push heroku master
+and later your secret.json:
+(git push heroku secret-branch:master)
 ```
