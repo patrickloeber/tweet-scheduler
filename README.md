@@ -6,12 +6,12 @@ You can use this repo as a starting point. Watch how I build and deploy this app
 [![Alt text](https://img.youtube.com/vi/yCYPzoG25ak/hqdefault.jpg)](https://www.youtube.com/watch?v=yCYPzoG25ak)
 
 ## Flask Quickstart:
-
-`python3 -m venv venv`
-
+### Create virtual env
+```console
+python3 -m venv venv
 Activate (on Mac):
-
-`. venv/bin/activate`
+. venv/bin/activate
+```
 
 ```console
 pip install Flask
@@ -47,7 +47,10 @@ heroku local
 
 Push to Heroku:
 ```console
+git init
 heroku git:remote -a your_app_name
+git add .
+git commit -m "initial commit"
 git push heroku master
 ```
 
@@ -56,5 +59,6 @@ and later your secret.json:
 git checkout -b secret-branch
   --> remove secret.json from *.gitignore* on new branch
 git add .
+git commit -m "add credentials"
 git push heroku secret-branch:master
 ```
